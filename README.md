@@ -1,2 +1,7 @@
 # uebersicht-time-of-angels
-Dr Who inspired widget for Übersicht
+
+![](screenshot.png)
+
+A fullscreen background widget for [Übersicht](http://tracesof.net/uebersicht/) inspired by the Dr. Who Episode "A Time of Angels".
+
+You better not blink!
