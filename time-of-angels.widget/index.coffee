@@ -15,7 +15,6 @@ style: """
     left: 0%
     height: 100%
     width: 100%
-    color: #fff
     position: absolute
     z-index:-1
     background-image: url('time-of-angels.widget/images/001.png')
@@ -24,10 +23,12 @@ style: """
     transition: all linear .5s
 
   .clock
-      bottom: 3%
+      bottom: 6%
       right: 0
       position: absolute
-      background: #000
+      color: rgba(245,235,255,0.8)
+      text-shadow: 0 0 10px #000
+      background: rgba(0,0,0,0.5)
       padding: 0 2%
       font-size: 600%
       font-family: "Ayuthaya"
@@ -40,15 +41,15 @@ render: (output) -> """
 """
 
 update: (output, domEl) ->
-  min = output.split(":")[1].split("")[0]
+  min = output.split(":")[1].split("")[1]
   bgEl = $(domEl).find('.background')
-  isEven = min % 2 == 0
+  minEndByNine = min % 10 == 9
   $(domEl).find('.clock').text output
 
-  if isEven == true && bgEl.data("show") == false
+  if minEndByNine == true && bgEl.data("show") == false
     bgEl.css "background-image", "url('time-of-angels.widget/images/002.png')"
     bgEl.data("show", true)
 
-  if isEven == false && bgEl.data("show") == true
+  if minEndByNine == false && bgEl.data("show") == true
     bgEl.css "background-image", "url('time-of-angels.widget/images/001.png')"
     bgEl.data("show", false)
